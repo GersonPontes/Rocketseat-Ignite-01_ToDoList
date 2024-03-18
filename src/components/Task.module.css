@@ -1,0 +1,83 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+
+  background: var(--gray-500);
+  border: solid 1px var(--gray-400);
+  border-radius: 8px;
+
+  padding: 1rem;
+}
+
+.taskCheckbox input[type=checkbox] {
+  display: none;
+}
+
+.taskCheckbox input[type=checkbox] + label:before {
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: solid 1px var(--blue-100);
+  margin-right: 1rem;
+  margin-top: .15rem;
+}
+
+.taskCheckbox input[type=checkbox]:hover + label:before {
+  background: var(--blue-200);
+}
+
+.taskCheckbox input[type=checkbox]:checked + label:before {
+  background: var(--purple-200);
+  border: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' fill='%23f2f2f2' viewBox='0 0 256 256'%3E%3Cpath d='M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.taskCheckbox input[type=checkbox]:checked:hover + label:before {
+  background: var(--purple-100);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' fill='%23f2f2f2' viewBox='0 0 256 256'%3E%3Cpath d='M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.taskText,
+.taskCompletedText {
+  width: 100%;
+}
+
+.taskText p {
+  width: 100%;
+  font-size: 0.875rem;
+  color: var(--gray-100);
+  margin-right: 2rem;
+}
+
+.taskCompletedText > p {
+  width: 100%;
+  font-size: 0.875rem;
+  color: var(--gray-300);
+  text-decoration: line-through;
+  margin-right: 2rem;
+}
+
+.task + .task{
+  margin-top: .75rem;
+}
+
+.task > svg{
+  box-sizing: initial;
+  color: var(--gray-300);
+  padding: 5px 6px;
+}
+
+.task > svg:hover{  
+  cursor: pointer;
+  color: var(--red-100);
+  background: var(--gray-400);
+  border-radius: 4px;  
+}
